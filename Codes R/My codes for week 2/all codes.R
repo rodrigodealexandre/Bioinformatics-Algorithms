@@ -1,4 +1,5 @@
-setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Codes R/My codes for week 2")
+#-------------------------------------------------
+setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Bioinformatics-Algorithms/Codes R/My codes for week 2")
 
 
 #-------------------------------------------------
@@ -142,7 +143,7 @@ search_AA_on_genome <- function(sequence, genome){
 
 
 #-------------------------------------------------
-setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Codes R/My codes for week 2")
+setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Bioinformatics-Algorithms/Codes R/My codes for week 2")
 pep_mass <- read.table("integer_mass_table.txt")
 
 aa_seqence <- function(sequence){
@@ -182,7 +183,7 @@ cyclopeptide_mass_spectrum <- function(sequence){
 
 
 #-------------------------------------------------
-setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Codes R/My codes for week 2")
+setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Bioinformatics-Algorithms/Codes R/My codes for week 2")
 
 peptide_score <- function(sequence, spectrum){
     if(length(sequence) == 1){
@@ -200,14 +201,15 @@ peptide_score <- function(sequence, spectrum){
     return(score)
 }
 
-file <- readLines("data/dataset_4913_1 (1).txt")
-sequence <- file[1]
-spectrum <- file[2]
-score <- peptide_score(sequence, spectrum)
-cat(score)
+# file <- readLines("data/dataset_4913_1 (1).txt")
+# sequence <- file[1]
+# spectrum <- file[2]
+# score <- peptide_score(sequence, spectrum)
+# cat(score)
 
 #-------------------------------------------------
-setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Codes R/My codes for week 2")
+setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Bioinformatics-Algorithms/Codes R/My codes for week 2")
+
 pep_mass <- read.table("integer_mass_table.txt")
 library(plyr)
 
@@ -257,14 +259,15 @@ cyclopeptide_sequencing <-function(spectrum){
 }
 
  
-#spectrum <- readLines("data/cycloseq_data.txt")
-spectrum = "0 113 128 186 241 299 314 427"
-cyclo <- cyclopeptide_sequencing(spectrum)
-cat(cyclo)
+# spectrum <- readLines("data/cycloseq_data.txt")
+# spectrum = "0 113 128 186 241 299 314 427"
+# cyclo <- cyclopeptide_sequencing(spectrum)
+# cat(cyclo)
 
 
 #-------------------------------------------------
-setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Codes R/My codes for week 2")
+setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Bioinformatics-Algorithms/Codes R/My codes for week 2")
+
 
 linear_spectrum <- function(sequence){
     mass <- 0
@@ -298,21 +301,20 @@ linear_spectrum <- function(sequence){
 
 }
 
-sequence <- "NQEL"
-lin_spec <- linear_spectrum(sequence)
-cat(lin_spec)
+# sequence <- "NQEL"
+# lin_spec <- linear_spectrum(sequence)
+# cat(lin_spec)
 
 
 #-------------------------------------------------
-setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Codes R/My codes for week 2")
+setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Bioinformatics-Algorithms/Codes R/My codes for week 2")
+
 
 linear_peptide_scoring <-function(sequence, spectrum){
     if(length(spectrum) == 1){
         spectrum <- strsplit(spectrum, "\\s" )[[1]]
     }
-    print("linear_spec")
     sequence <- linear_spectrum(sequence)
-    print("pep_score")
     score <- peptide_score(sequence, spectrum)
     return(score)
 }
@@ -334,22 +336,23 @@ multiple_linear_peptide_scoring <-function(sequence, spectrum, n){
     return(scores[1:n])
 }
 
-file <- readLines("data/dataset_4913_3.txt")
-sequence <- file[1]
-spectrum <- file[2]
-n <- file[3]
+# file <- readLines("data/dataset_4913_3.txt")
+# sequence <- file[1]
+# spectrum <- file[2]
+# n <- file[3]
 
-score <- multiple_linear_peptide_scoring(sequence, spectrum, n)
-score
-cat(names(score))
-
-#-------------------------------------------------
-
-
-
+# score <- multiple_linear_peptide_scoring(sequence, spectrum, n)
+# score
+# cat(names(score))
 
 #-------------------------------------------------
-setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Codes R/My codes for week 2")
+
+
+
+
+#-------------------------------------------------
+setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Bioinformatics-Algorithms/Codes R/My codes for week 2")
+
 pep_mass <- read.table("integer_mass_table.txt")
 library(plyr)
 linear_spectrum
@@ -376,7 +379,7 @@ leaderboard_cyclopeptide_sequencing <-function(spectrum, n){
         names(compose) <- paste("Var", count, sep="")
           
         while(TRUE){
-            print(paste("Loop number", count, sep=" ")
+            print(paste("Loop number", count, sep=" "))
             count <- count + 1
             unique_values <- as.data.frame(unique_values)
             names(unique_values) <- paste("Var", count, sep="")
@@ -414,17 +417,17 @@ leaderboard_cyclopeptide_sequencing <-function(spectrum, n){
     }
 }
         
- 
-file <- readLines("data/leaderboard.txt")
-spectrum <- file[3]
-n <- file[2]
-leaderboard_cyclopeptide_sequencing(spectrum, n)
-
-
-file <- readLines("data/dataset_102_7 (1).txt")
-spectrum <- file[2]
-n <- file[1]
-leaderboard_cyclopeptide_sequencing(spectrum, n)
+#  
+# file <- readLines("data/leaderboard.txt")
+# spectrum <- file[3]
+# n <- file[2]
+# leaderboard_cyclopeptide_sequencing(spectrum, n)
+# 
+# 
+# file <- readLines("data/dataset_102_7 (1).txt")
+# spectrum <- file[2]
+# n <- file[1]
+# leaderboard_cyclopeptide_sequencing(spectrum, n)
 
 
 

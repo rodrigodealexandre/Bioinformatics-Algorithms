@@ -1,3 +1,5 @@
+#-------------------------------------------------
+setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Bioinformatics-Algorithms/Codes R/My codes for week 2")
 #load table
 aa_nomeclature <- read.table("aa_nomeclature.txt")
 

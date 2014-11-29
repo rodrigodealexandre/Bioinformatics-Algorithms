@@ -1,5 +1,5 @@
 #-------------------------------------------------
-setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Codes R/My codes for week 2")
+setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Bioinformatics-Algorithms/Codes R/My codes for week 2")
 pep_mass <- read.table("integer_mass_table.txt")
 library(plyr)
 source("linear_spectrum.R")
