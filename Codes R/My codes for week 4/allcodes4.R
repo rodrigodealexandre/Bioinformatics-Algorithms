@@ -106,6 +106,23 @@ de_bruijn_graph <- function(sequence, k){
     
 }
 
+#------------------------------------------
+setwd("D:/Dropbox/Courses/Coursera Courses/Bioinformatics Algorithms (Part 1)/Bioinformatics-Algorithms/Codes R/My codes for week 4")
+source("composition_k.R")
+
+de_bruijn_graph_k <- function(kmers){
+    if(length(kmers)==1){
+        kmers <- strsplit(kmers, "\\s+")[[1]]
+    }
+    kmers <- sort(kmers)
+    len <- nchar(kmers[1])
+    first_k <- unique(substr(kmers,start=1,stop=(len-1)))
+    result <- unlist(lapply(first_k, function(x){
+        paste(x, paste0(substr(kmers[grepl(paste0("^", x),kmers)], 
+                               start=2, stop=len), collapse=","), sep=" -> ")}))
+    
+    return(sort(result))    
+}  
 
 
 #------------------------------------------
